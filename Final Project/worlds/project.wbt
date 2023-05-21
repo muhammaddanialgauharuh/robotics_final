@@ -1,0 +1,155 @@
+#VRML_SIM R2023a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/GalvanizedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/CorrugatedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/universal_robots/protos/UR10e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/PlasticCrate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/drinks/protos/Can.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
+
+WorldInfo {
+  info [
+    "Universal Robot UR3e, UR5e and UR10e grasping cans using Robotiq 3F grippers."
+  ]
+  title "Universal Robot"
+  basicTimeStep 8
+  physicsDisableAngularThreshold 0.1
+  contactProperties [
+    ContactProperties {
+      bounce 0.1
+    }
+    ContactProperties {
+      material1 "slope"
+      coulombFriction [
+        0.5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.001986756816502347 0.9999689076509438 0.007631286177989455 0.5108143607597776
+  position -5.969709332460495 1.2094673752281802 4.552545152056559
+  exposure 1.7
+}
+TexturedBackground {
+  texture "empty_office"
+}
+Transform {
+  translation 2.52024 2.10889 0.796
+  rotation 0 0 1 -1.3089953071795861
+}
+Transform {
+  translation 1.77 2.67 1.05
+  rotation 1 0 0 1.5707996938995747
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.23 0.3 0.01
+      }
+    }
+  ]
+}
+SolidBox {
+  translation -0.135 -0.0323 0.305
+  size 1.5 0.4 0.61
+  appearance GalvanizedMetal {
+  }
+}
+UR10e {
+  hidden position_0_0 -5.940391390158503e-05
+  hidden rotation_1 0 0 -1 5.940391596758311e-05
+  hidden position_1_0 0.00014299499324966
+  hidden rotation_2 0 1 0 1.5709389949932537
+  hidden position_2_0 3.860545708571036e-05
+  hidden rotation_3 0 1 0 3.860545494967622e-05
+  hidden position_3_0 5.222185896530836e-06
+  hidden rotation_4 0 1 0 1.570801222185896
+  hidden position_4_0 1.725877842740185e-06
+  hidden rotation_5 0 0 1 1.7259636206115136e-06
+  hidden position_5_0 -1.6664716802912269e-06
+  hidden rotation_6 0 -1 0 1.666533503534343e-06
+  hidden position_7_0 1.8336557714629768e-07
+  hidden position_7_1 1.833655735146013e-07
+  hidden position_7_2 0.049500052672139194
+  hidden rotation_8 0.7068252250603836 0.7073882252405289 3.06480467604288e-06 3.141598129710624
+  hidden position_8_0 0.049499947332721464
+  hidden rotation_9 0 0 -1 5.16191365590357e-08
+  hidden position_9_0 -7.657851140334823e-09
+  hidden rotation_10 0 0 -1 0.520000007649308
+  hidden position_10_0 -0.05229999999996123
+  hidden rotation_12 0.7068252250603837 0.7073882252405287 3.064804674759394e-06 3.1415981297106215
+  hidden position_12_0 0.04949994733271706
+  hidden rotation_13 0 0 -1 4.2146848510894035e-08
+  hidden position_13_0 -7.657852130193987e-09
+  hidden rotation_14 0 0 -1 0.5200000076494781
+  hidden position_14_0 -0.05229999999996052
+  hidden rotation_16 0 0 1 5.16191365590357e-08
+  hidden position_16_0 7.658591518012872e-09
+  hidden rotation_17 0 0 -1 0.5199999923366515
+  hidden position_17_0 -0.052300000000001776
+  translation -0.56 -0.1 0.61
+  rotation 4.66309e-07 -7.19235e-09 1 -1.5707953071795862
+  controller "danial_controller"
+  selfCollision FALSE
+  toolSlot [
+    Robotiq3fGripper {
+    }
+    DistanceSensor {
+      translation 0 0.1 0
+      rotation 0 0 1 1.570796
+    }
+  ]
+}
+ConveyorBelt {
+  translation 3.18 -1.05 0
+  rotation 0 0 1 3.141592
+  size 8 1.3 0.59
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 0.2
+}
+PlasticCrate {
+  translation -0.41 0.68 -9.81000000002119e-05
+  rotation 0.6292917834173165 0.690083648684081 -0.3574582620982747 6.923659215088506e-19
+  name "plastic crate(1)"
+  size 0.6 0.45 0.4
+  color 0 0.2 0.2
+  mass 1
+}
+Can {
+  translation 1.0087265093284838 -1.2849999716044798 0.6610790914636904
+  rotation 0.0016423073536577957 -0.999998617414409 0.0002607600939658613 0.0002668952281107036
+  name "CAN_1"
+}
+Can {
+  translation 2.0987228384544183 -1.2850001275440275 0.6610816835965213
+  rotation 0.009905181043406881 -0.9999509371107542 0.00010372956005235204 0.0003094731981163742
+  name "CAN_2"
+}
+Can {
+  translation 3.508722636700398 -1.285000075894282 0.6610834371797768
+  rotation 0.0079843261451157 -0.999968123126015 -5.716505481952631e-05 0.0002900943936030566
+  name "CAN_3"
+}
+Can {
+  translation 5.0087204179888385 -1.284998999046652 0.6610857809258222
+  rotation -0.05024188315113052 -0.9987370567232269 -0.00021143617061718763 0.00030266475759662976
+  name "CAN_4"
+}
+RectangleArena {
+  floorSize 15 3.8
+  wallHeight 1
+}
